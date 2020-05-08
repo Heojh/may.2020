@@ -25,4 +25,4 @@ Explain :
 day8
 <h3>[modal01]</h3>
 Explain :
-<br>modal 연습.
+<br>관리자 페이지로 이동하는데 필요한 modal 연습.
