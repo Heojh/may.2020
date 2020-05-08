@@ -1,3 +1,4 @@
+day7
 <h3>[chat01_transports]</h3>
 Reference : 
 http://webschool.kr/page.php?bbs=nodejs&bbs_idx=5&pg=
@@ -15,6 +16,13 @@ TODO :
 실제로 클라이언트에 연결되면 클라이언트 접속 부분도 확인이 된다.
 
 ---
+day7
 <h3>[chat01_1]</h3>
 Explain :
-chat01_transports 를 토대로 기본 채팅 구현.
+<br>chat01_transports 를 토대로 기본 채팅 구현.
+
+---
+day8
+<h3>[modal01]</h3>
+Explain :
+<br>modal 연습.
