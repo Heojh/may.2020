@@ -40,7 +40,7 @@ if ($number_match) {
         $_SESSION["user_name"] = $row["name"];
         echo("
                 <script>
-                    location.href = 'index.php';
+                    location.href = 'administration.html';
                 </script>
             ");
         // header("location:../index.php");
