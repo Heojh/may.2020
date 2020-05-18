@@ -18,9 +18,10 @@ button.addEventListener('click', function callback() {
         result.textContent = '딩동댕'
         word.textContent = inputData.value;
         inputData.value = '';
+        inputData.focus();
     } else {
         result.textContent = '땡';
         inputData.value = '';
-    }
+        inputData.focus();    }
 })
 
