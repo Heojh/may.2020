@@ -25,7 +25,10 @@ const result = document.createElement('div');
 body.append(result);
 
 // button -> form / 'click' -> 'submit'
-form.addEventListener('submit', function callback() {
+form.addEventListener('submit', function callback(e) {
+    // 새로고침 현상 발생. 새로고침이 되지 않게 해주기 위한 코드.
+    e.preventDefault();
+
     if(word.textContent[word.textContent.length - 1] === inputData.value[0]) {
         result.textContent = '딩동댕'
         word.textContent = inputData.value;
@@ -34,6 +37,7 @@ form.addEventListener('submit', function callback() {
     } else {
         result.textContent = '땡';
         inputData.value = '';
-        inputData.focus();    }
+        inputData.focus();
+    }
 })
 
