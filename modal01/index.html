@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="index.css" rel="stylesheet">
+</head>
+<body>
+<!-- Button to open the modal -->
+<button onclick="document.getElementById('modal').style.display='block'">Sign Up</button>
+
+<!-- The Modal (contains the Sign Up form) -->
+<div id="modal" class="modal">
+    <span onclick="document.getElementById('modal').style.display='none'" class="close" title="Close Modal">&times;</span>
+    <form class="modal-content" action="checkAdmin.php" method="POST">
+        <div class="container">
+            <h1>Are you an administrator?</h1>
+            <p>If you don't have permission, click the Cancel button.</p>
+            <hr>
+            <label for="id"><b>ID</b></label>
+            <input type="text" placeholder="Enter ID" name="id" required>
+
+            <label for="password"><b>Password</b></label>
+            <input type="password" placeholder="Enter Password" name="password" required>
+
+            <label for="password-repeat"><b>Repeat Password</b></label>
+            <input type="password" placeholder="Repeat Password" name="password-repeat" required>
+
+            <div class="clearfix">
+                <button type="submit" name="submit" class="login">Login</button>
+                <button type="button" onclick="document.getElementById('modal').style.display='none'" class="cancel">Cancel</button>
+            </div>
+        </div>
+    </form>
+</div>
+</body>
+</html>

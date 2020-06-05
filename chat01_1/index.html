@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .chat_log {
+            width: 95%;
+            height: 200px;
+        }
+
+        .name {
+            width: 10%;
+        }
+
+        .message {
+            width: 70%;
+        }
+
+        .chat {
+            width: 10%;
+        }
+    </style>
+    <script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
+    <script src="https://cdn.socket.io/socket.io-1.3.5.js"></script>
+</head>
+<body>
+<div>
+    <textarea id="chatLog" class="chat_log" readonly></textarea>
+</div>
+<form id="chat">
+    <input id="name" class="name" type="text" readonly>
+    <input id="message" class="message" type="text">
+    <input type="submit" class="chat" value="chat"/>
+</form>
+<div id="box" class="box">
+    <script>
+        const socket = io.connect('http://192.168.146.195:3000',{transports: ['websocket']});
+        $('#chat').on('submit', function (e) { //2
+            socket.emit('send message', $('#name').val(), $('#message').val());
+            $('#message').val('');
+            $('#message').focus();
+            e.preventDefault();
+        });
+        socket.on('receive message', function (msg) { //3
+            $('#chatLog').append(msg + '\n');
+            $('#chatLog').scrollTop($('#chatLog')[0].scrollHeight);
+        });
+        socket.on('change name', function (name) { //4
+            $('#name').val(name);
+        });
+    </script>
+</div>
+</body>
+</html>
+
